@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharang Karkal — Senior Manager Content & Creative | Hire Now</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', 'Amazon Ember', Arial, sans-serif;
+    color: #0F1111;
+    background: #EAEDED;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .nav {
+    background: #131921; color: #fff; padding: 8px 16px;
+    display: flex; align-items: center; gap: 16px; font-size: 13px;
+  }
+  .nav-logo { font-weight: 700; font-size: 22px; letter-spacing: -0.5px; padding: 4px 8px; border: 1px solid transparent; border-radius: 2px; }
+  .nav-logo:hover { border-color: #fff; cursor: pointer; }
+  .nav-logo .accent { color: #FF9900; font-style: italic; }
+  .nav-loc { font-size: 12px; line-height: 1.2; }
+  .nav-loc-1 { color: #ccc; font-size: 11px; }
+  .nav-loc-2 { font-weight: 700; }
+  .nav-search { flex: 1; display: flex; background: #fff; border-radius: 4px; overflow: hidden; height: 38px; }
+  .nav-search-cat { background: #F3F3F3; color: #555; padding: 0 10px; display: flex; align-items: center; border-right: 1px solid #ccc; font-size: 12px; white-space: nowrap; }
+  .nav-search-input { flex: 1; padding: 0 12px; color: #0F1111; display: flex; align-items: center; font-size: 14px; }
+  .nav-search-btn { background: #FEBD69; color: #0F1111; width: 45px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+  .nav-right { display: flex; gap: 16px; color: #fff; font-size: 12px; }
+  .nav-right > div { line-height: 1.2; }
+  .nav-right .l1 { font-size: 11px; color: #ccc; }
+  .nav-right .l2 { font-weight: 700; font-size: 13px; }
+
+  .subnav { background: #232F3E; color: #fff; padding: 6px 16px; display: flex; gap: 14px; font-size: 13px; overflow-x: auto; }
+  .subnav span { padding: 4px 6px; border: 1px solid transparent; border-radius: 2px; cursor: pointer; white-space: nowrap; }
+  .subnav span:hover { border-color: #fff; }
+
+  .breadcrumb { background: #fff; padding: 8px 24px; font-size: 12px; color: #565959; }
+  .breadcrumb a { color: #007185; text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; color: #C7511F; }
+
+  .container { max-width: 1280px; margin: 0 auto; background: #fff; padding: 16px 24px; }
+
+  .product { display: grid; grid-template-columns: 420px 1fr 280px; gap: 24px; padding: 16px 0; }
+
+  .gallery { position: sticky; top: 16px; align-self: start; }
+  .gallery-main {
+    width: 100%; aspect-ratio: 1;
+    background: #1a1a1a;
+    border-radius: 4px;
+    position: relative; overflow: hidden;
+    display: flex; align-items: flex-end;
+  }
+  .gallery-main::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255,153,0,0.15), transparent 50%),
+      radial-gradient(circle at 70% 80%, rgba(139,0,0,0.4), transparent 50%);
+  }
+  .hero-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero-text {
+    position: relative; z-index: 2;
+    padding: 28px;
+    color: #fff;
+  }
+  .hero-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #FF9900; font-weight: 600; margin-bottom: 8px; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; line-height: 1; letter-spacing: -1px; margin-bottom: 6px; }
+  .hero-tag { font-size: 13px; color: rgba(255,255,255,0.85); font-style: italic; }
+  .badge-bestseller { position: absolute; top: 14px; left: 0; background: #C45500; color: #fff; padding: 5px 18px 5px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; z-index: 3; }
+
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 6px; margin-top: 10px;
+  }
+  .hero-stat {
+    background: #F3F3F3; border: 1px solid #ddd; border-radius: 4px;
+    padding: 12px 8px; text-align: center;
+  }
+  .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: #8B0000; line-height: 1; }
+  .hero-stat-label { font-size: 10px; color: #565959; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+  .details h1 { font-size: 22px; font-weight: 500; line-height: 1.3; color: #0F1111; margin-bottom: 4px; }
+  .by-line { font-size: 13px; color: #007185; margin-bottom: 6px; cursor: pointer; }
+  .by-line:hover { text-decoration: underline; }
+
+  .rating-row { display: flex; align-items: center; gap: 8px; padding-bottom: 8px; border-bottom: 1px solid #E7E7E7; margin-bottom: 12px; font-size: 13px; flex-wrap: wrap; }
+  .stars { color: #DE7921; letter-spacing: -1px; font-size: 16px; font-weight: 700; }
+  .rating-num { color: #007185; }
+  .amazon-choice { background: #232F3E; color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 3px; font-weight: 700; }
+  .amazon-choice .accent { color: #FF9900; font-style: italic; }
+
+  .price-block { padding: 10px 0; border-bottom: 1px solid #E7E7E7; margin-bottom: 12px; }
+  .price-deal { background: #CC0C39; color: #fff; font-size: 11px; padding: 2px 6px; font-weight: 700; display: inline-block; margin-bottom: 4px; }
+  .price-main { display: flex; align-items: flex-start; gap: 4px; margin-bottom: 4px; }
+  .price-symbol { font-size: 13px; margin-top: 4px; }
+  .price-amount { font-size: 28px; font-weight: 400; color: #0F1111; line-height: 1; }
+  .price-mrp { font-size: 12px; color: #565959; margin-bottom: 2px; }
+  .price-note { font-size: 12px; color: #565959; }
+
+  .variant-row { margin: 12px 0; padding-bottom: 12px; border-bottom: 1px solid #E7E7E7; }
+  .variant-label { font-size: 13px; color: #0F1111; margin-bottom: 6px; }
+  .variant-label strong { font-weight: 700; }
+  .variants { display: flex; gap: 8px; flex-wrap: wrap; }
+  .variant { border: 2px solid #E77600; border-radius: 8px; padding: 8px 12px; font-size: 13px; background: #FFF8F1; }
+  .variant-sub { font-size: 11px; color: #565959; margin-top: 2px; }
+
+  .about-h { font-size: 16px; font-weight: 700; margin: 16px 0 8px; }
+  .about-list { list-style: none; padding: 0; }
+  .about-list li { position: relative; padding-left: 14px; margin-bottom: 8px; font-size: 13px; line-height: 1.55; color: #0F1111; }
+  .about-list li::before { content: '•'; position: absolute; left: 0; top: 0; font-weight: 700; }
+  .about-list strong { font-weight: 700; }
+
+  .buy-box { border: 1px solid #D5D9D9; border-radius: 8px; padding: 14px; background: #fff; }
+  .buy-price { font-size: 22px; font-weight: 400; margin-bottom: 8px; }
+  .buy-stock { color: #007600; font-size: 18px; font-weight: 500; margin-bottom: 12px; }
+  .buy-meta { font-size: 12px; color: #565959; margin-bottom: 6px; line-height: 1.4; }
+  .buy-meta a { color: #007185; text-decoration: none; }
+  .buy-meta a:hover { color: #C7511F; text-decoration: underline; }
+  .buy-fast { color: #007600; font-size: 12px; font-weight: 700; margin-bottom: 12px; }
+  .btn { width: 100%; border-radius: 100px; border: 1px solid; padding: 8px 12px; font-size: 13px; cursor: pointer; margin-bottom: 8px; text-align: center; font-family: inherit; }
+  .btn-cart { background: #FFD814; border-color: #FCD200; color: #0F1111; }
+  .btn-cart:hover { background: #F7CA00; }
+  .btn-buy { background: #FFA41C; border-color: #FF8F00; color: #0F1111; }
+  .btn-buy:hover { background: #FA8900; }
+  .btn-secure { font-size: 12px; color: #565959; text-align: center; margin: 8px 0; }
+  .seller-table { font-size: 12px; width: 100%; margin-top: 8px; }
+  .seller-table td { padding: 3px 0; color: #565959; vertical-align: top; }
+  .seller-table td:first-child { width: 40%; }
+  .seller-table td:last-child { color: #007185; }
+
+  .section { border-top: 1px solid #E7E7E7; padding: 32px 24px; background: #fff; }
+  .section-h { font-size: 22px; font-weight: 700; margin-bottom: 6px; color: #0F1111; }
+  .section-sub { font-size: 13px; color: #565959; margin-bottom: 20px; }
+
+  .cat-wrap { position: relative; margin: 0 -8px; }
+  .catalogue {
+    display: flex; gap: 16px; overflow-x: auto;
+    scroll-behavior: smooth; scroll-snap-type: x mandatory;
+    padding: 8px; scrollbar-width: thin; scrollbar-color: #ccc transparent;
+  }
+  .catalogue::-webkit-scrollbar { height: 6px; }
+  .catalogue::-webkit-scrollbar-track { background: transparent; }
+  .catalogue::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+  .catalogue::-webkit-scrollbar-thumb:hover { background: #999; }
+
+  .cat-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 44px; height: 44px; border-radius: 50%;
+    background: #fff; border: 1px solid #D5D9D9;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 10; font-size: 18px; font-weight: 700;
+    color: #0F1111; transition: all 0.15s; user-select: none;
+  }
+  .cat-arrow:hover { background: #F7CA00; border-color: #FCD200; }
+  .cat-arrow.left { left: -8px; }
+  .cat-arrow.right { right: -8px; }
+  .cat-arrow.disabled { opacity: 0.3; cursor: not-allowed; pointer-events: none; }
+
+  .cat-card {
+    flex: 0 0 320px; scroll-snap-align: start;
+    border: 1px solid #E7E7E7; border-radius: 8px;
+    overflow: hidden; background: #fff;
+    transition: all 0.2s ease; cursor: pointer;
+    display: flex; flex-direction: column;
+    text-decoration: none; color: inherit;
+  }
+  .cat-card:hover { border-color: #E77600; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+
+  .cat-visual { aspect-ratio: 4/3; position: relative; overflow: hidden; }
+  .cat-visual svg { width: 100%; height: 100%; display: block; }
+  .cat-tag {
+    position: absolute; top: 10px; left: 10px;
+    background: rgba(255,255,255,0.95); color: #C45500;
+    font-size: 10px; font-weight: 700; padding: 4px 8px;
+    border-radius: 3px; letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .cat-tag.dark { background: rgba(0,0,0,0.85); color: #FF9900; }
+  .cat-body { padding: 14px 16px 16px; }
+  .cat-title { font-size: 16px; font-weight: 700; color: #0F1111; margin-bottom: 4px; line-height: 1.25; }
+  .cat-stars { color: #DE7921; font-size: 12px; margin-bottom: 6px; letter-spacing: -0.5px; }
+  .cat-stars span { color: #007185; font-weight: 400; }
+  .cat-usp { font-size: 13px; color: #0F1111; line-height: 1.45; margin-bottom: 10px; }
+  .cat-proof { font-size: 11px; color: #565959; padding-top: 10px; border-top: 1px solid #F0F0F0; line-height: 1.4; }
+  .cat-proof strong { color: #0F1111; font-weight: 600; }
+  .cat-cta { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding-top: 10px; border-top: 1px solid #F0F0F0; }
+  .cat-price { font-weight: 700; font-size: 14px; color: #B12704; }
+  .cat-link { font-size: 12px; color: #007185; }
+
+  .employment { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .emp-card { border: 1px solid #E7E7E7; border-radius: 6px; padding: 12px 10px; background: #FAFAFA; text-align: center; min-height: 110px; display: flex; flex-direction: column; justify-content: space-between; }
+  .emp-card.current { border-color: #E77600; border-width: 2px; background: #FFF8F1; }
+  .emp-brand { font-size: 13px; font-weight: 700; color: #0F1111; }
+  .emp-role { font-size: 11px; color: #565959; margin-top: 2px; }
+  .emp-year { font-size: 10px; color: #888; margin-top: 4px; }
+  .emp-usp { font-size: 11px; color: #0F1111; font-weight: 600; line-height: 1.3; margin-top: 8px; }
+
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .specs-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .specs-table tr:nth-child(odd) { background: #F7F8F8; }
+  .specs-table td { padding: 8px 12px; }
+  .specs-table td:first-child { font-weight: 700; width: 40%; color: #0F1111; }
+
+  .review { border-bottom: 1px solid #E7E7E7; padding: 12px 0; }
+  .review:last-child { border-bottom: none; }
+  .reviewer { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .avatar { width: 28px; height: 28px; border-radius: 50%; background: #232F3E; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+  .reviewer-name { font-weight: 700; font-size: 13px; }
+  .review-stars { color: #DE7921; font-size: 14px; letter-spacing: -1px; font-weight: 700; }
+  .review-title { font-weight: 700; font-size: 14px; margin: 4px 0; }
+  .review-meta { font-size: 12px; color: #565959; margin-bottom: 6px; }
+  .review-meta .verified { color: #C45500; font-weight: 700; }
+  .review-body { font-size: 13px; line-height: 1.5; }
+  .review-helpful { margin-top: 8px; font-size: 12px; color: #565959; }
+  .reviews-summary { display: grid; grid-template-columns: 200px 1fr; gap: 24px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #E7E7E7; }
+  .big-rating { font-size: 36px; font-weight: 400; line-height: 1; }
+  .rating-bar-row { display: flex; align-items: center; gap: 8px; font-size: 12px; margin-bottom: 4px; }
+  .rating-bar-label { color: #007185; width: 60px; cursor: pointer; }
+  .rating-bar-track { flex: 1; height: 18px; background: #F0F2F2; border: 1px solid #E7E7E7; border-radius: 3px; overflow: hidden; max-width: 280px; }
+  .rating-bar-fill { height: 100%; background: #FFA41C; }
+  .rating-bar-pct { width: 35px; color: #565959; }
+
+  .qa { margin-bottom: 16px; }
+  .qa-q { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; margin-bottom: 6px; font-weight: 500; }
+  .qa-badge { background: #F0F2F2; color: #565959; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  .qa-q .qa-badge { background: #232F3E; color: #fff; }
+  .qa-a { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: #0F1111; line-height: 1.5; }
+  .qa-a .qa-badge { background: #FF9900; color: #fff; }
+  .qa-meta { font-size: 12px; color: #565959; margin-left: 26px; margin-top: 4px; }
+
+  .footer-back { background: #37475A; color: #fff; padding: 12px; text-align: center; font-size: 13px; cursor: pointer; }
+  .footer { background: #232F3E; color: #fff; padding: 24px; text-align: center; font-size: 13px; }
+  .footer a { color: #fff; text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.4); }
+
+  @media (max-width: 1000px) {
+    .product { grid-template-columns: 1fr; }
+    .specs-grid { grid-template-columns: 1fr; }
+    .employment { grid-template-columns: repeat(2, 1fr); }
+    .gallery { position: static; }
+  }
+  @media (max-width: 600px) {
+    .cat-card { flex: 0 0 280px; }
+    .cat-arrow { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="nav-logo">karkal<span class="accent">.in</span></div>
+  <div class="nav-loc">
+    <div class="nav-loc-1">Deliver to</div>
+    <div class="nav-loc-2">Your office, Bengaluru 560001</div>
+  </div>
+  <div class="nav-search">
+    <div class="nav-search-cat">All ▾</div>
+    <div class="nav-search-input">senior content & creative leaders</div>
+    <div class="nav-search-btn">🔍</div>
+  </div>
+  <div class="nav-right">
+    <div><div class="l1">Hello, hiring manager</div><div class="l2">Account & Offers ▾</div></div>
+    <div><div class="l1">Returns</div><div class="l2">& Orders</div></div>
+    <div><div class="l1">Cart</div><div class="l2">🛒 1</div></div>
+  </div>
+</div>
+
+<div class="subnav">
+  <span>≡ All</span>
+  <span>Today's Deals</span>
+  <span>Senior Hires</span>
+  <span>Content Leaders</span>
+  <span>Creative Heads</span>
+  <span>Brand Marketers</span>
+  <span>Best Sellers</span>
+  <span>New Releases</span>
+</div>
+
+<div class="breadcrumb">
+  <a href="#">Hires</a> › <a href="#">Marketing</a> › <a href="#">Content & Creative</a> › <a href="#">Senior Manager</a> › <strong>Sharang Karkal</strong>
+</div>
+
+<div class="container">
+
+  <div class="product">
+
+    <div class="gallery">
+      <div class="gallery-main">
+        <div class="badge-bestseller">★ Bestseller</div>
+        <img src="https://i.ibb.co/bMcXp9Ws/IMG-20260427-120354.jpg"
+             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;"
+             crossorigin="anonymous"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.88) 40%, rgba(0,0,0,0.2) 65%, transparent 100%);"></div>
+        <div class="hero-text">
+          <div class="hero-eyebrow">Now in stock · 1 unit available</div>
+          <div class="hero-name">Sharang Karkal</div>
+          <div class="hero-tag">Senior Manager, Content & Creative · 8 yrs · Brand + Performance</div>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">30+</div>
+          <div class="hero-stat-label">Campaigns</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">5+</div>
+          <div class="hero-stat-label">IP partnerships</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">50%</div>
+          <div class="hero-stat-label">AI time saved</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="details">
+      <h1>Sharang Karkal — Senior Manager, Content & Creative (AI-Native, 30+ Campaigns Concept-to-Live, 5+ IP Partnerships, Celebrity Campaign Writing, 8+ Yrs Across Categories)</h1>
+      <div class="by-line">Visit the Karkal Store</div>
+
+      <div class="rating-row">
+        <span class="stars">★★★★★</span>
+        <span class="rating-num">4.8 out of 5</span>
+        <span style="color:#565959;">·</span>
+        <span class="rating-num">1,847 ratings across 5 employers</span>
+        <span style="margin-left:auto;" class="amazon-choice"><span class="accent">karkal's</span> Choice</span>
+      </div>
+
+      <div style="font-size:13px; color:#565959; margin-bottom:12px;">
+        <strong style="color:#0F1111;">2K+</strong> bought a coffee with him in past month
+      </div>
+
+      <div class="price-block">
+        <div class="price-deal">−25% career growth YoY</div>
+        <div class="price-main">
+          <span class="price-symbol">₹</span>
+          <span class="price-amount">Open to offers</span>
+        </div>
+        <div class="price-mrp">M.R.P.: <s>Counter-offer from current role</s> · Best price negotiated 1:1</div>
+        <div class="price-note">Inclusive of all taxes · Free shipping (notice period: 60 days)</div>
+      </div>
+
+      <div class="variant-row">
+        <div class="variant-label"><strong>Engagement type:</strong> <span style="color:#565959;">Full-time</span></div>
+        <div class="variants">
+          <div class="variant">Full-time<div class="variant-sub">In stock</div></div>
+        </div>
+      </div>
+
+      <div class="about-h">About this hire</div>
+      <ul class="about-list">
+        <li><strong>CAMPAIGNS CONCEPT TO LIVE</strong> — 30+ campaigns owned end-to-end, from the initial idea through strategy, scripting, and every marketing touchpoint until the moment it went live.</li>
+        <li><strong>CELEBRITY WORK — WRITING & MARKETING</strong> — wrote scripts, briefs, and all surrounding content for celebrity-led campaigns; owned the full marketing push from concept through to launch.</li>
+        <li><strong>5+ IP PARTNERSHIPS, STRATEGIST + MARKETEER</strong> — selected, structured, and marketed IP partnerships from pitch through live activation. Not just choosing names — building the narrative and taking it to the audience.</li>
+        <li><strong>AI WORKFLOW IN PRODUCTION</strong> — built and shipped an AI-led creative pipeline at DaMENSCH that cut performance content production by 50%+.</li>
+        <li><strong>END-TO-END CONTENT OWNER</strong> — performance, retention, social, brand films, catalogue. One person, one calendar, one P&L view.</li>
+      </ul>
+
+      <div style="margin-top:16px; padding:12px; background:#F0F8FF; border-radius:4px; font-size:13px; color:#0F1111;">
+        <strong>📦 Frequently delivered with:</strong> a sharp brief, strong opinions on hooks, and an AI prompt library that travels with him.
+      </div>
+    </div>
+
+    <div class="buy-box">
+      <div class="buy-price">Senior Manager</div>
+      <div class="buy-stock">In Stock</div>
+      <div class="buy-meta">
+        Sold by <a href="#">Sharang Karkal</a><br/>
+        Fulfilled by <a href="#">8+ years of practice</a>
+      </div>
+      <div class="buy-fast">✦ FAST. Ramps up in 2 weeks.</div>
+      <div class="buy-meta">Shipping: 60 days notice</div>
+      <div class="buy-meta">Returns: Eligible for free 90-day mutual review</div>
+
+      <button class="btn btn-cart" onclick="alert('Coffee scheduled. Check your calendar invite.')">Add to cart</button>
+      <button class="btn btn-buy" onclick="window.location.href='mailto:sharangkarkal@gmail.com?subject=Hiring%20enquiry&body=Hi%20Sharang%2C%0A%0AI%20came%20across%20your%20profile%20and%20would%20love%20to%20connect%20about%20a%20potential%20opportunity.%0A%0A'">Hire now</button>
+
+      <div class="btn-secure">🔒 Secure transaction</div>
+
+      <table class="seller-table">
+        <tr><td>Ships from</td><td style="color:#0F1111;">Bengaluru, IN</td></tr>
+        <tr><td>Sold by</td><td>Sharang Karkal</td></tr>
+        <tr><td>Languages</td><td style="color:#0F1111;">EN, HI, KN, KO</td></tr>
+        <tr><td>Notice period</td><td style="color:#0F1111;">60 days</td></tr>
+        <tr><td>Customer service</td><td>+91 95351 47552</td></tr>
+        <tr><td>Email seller</td><td>sharangkarkal@gmail.com</td></tr>
+        <tr><td>Portfolio</td><td>sharangportfolio.wordpress.com</td></tr>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- CATALOGUE -->
+  <div class="section">
+    <div class="section-h">What's on the shelf</div>
+    <div class="section-sub">Six capabilities. Each one delivered, each one ready to plug into your roadmap. Click any card to see the work.</div>
+
+    <div class="cat-wrap">
+      <div class="cat-arrow left disabled" id="catLeft" onclick="slideCat(-1)">‹</div>
+      <div class="cat-arrow right" id="catRight" onclick="slideCat(1)">›</div>
+      <div class="catalogue" id="catScroller">
+
+      <!-- 1. CAMPAIGNS -->
+      <a href="https://sharangportfolio.wordpress.com/" target="_blank" class="cat-card">
+        <div class="cat-visual">
+          <div class="cat-tag">In stock · 30+ delivered</div>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="lnch-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1a1a2e"/>
+                <stop offset="100%" stop-color="#16213e"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#lnch-bg)"/>
+            <g transform="translate(200, 150)">
+              <path d="M 0 -80 L 18 -40 L 18 30 Q 18 45, 0 50 Q -18 45, -18 30 L -18 -40 Z" fill="#FF9900" stroke="#fff" stroke-width="1.5"/>
+              <path d="M 0 -80 L 18 -40 L 18 -20 L -18 -20 L -18 -40 Z" fill="#fff" opacity="0.9"/>
+              <circle cx="0" cy="-30" r="5" fill="#1a1a2e"/>
+              <path d="M -18 30 L -32 60 L -18 50 Z" fill="#C45500"/>
+              <path d="M 18 30 L 32 60 L 18 50 Z" fill="#C45500"/>
+              <path d="M 0 50 L -8 80 L 0 75 L 8 80 Z" fill="#FF6B35"/>
+            </g>
+            <text x="40" y="70" font-family="Playfair Display" font-size="22" font-weight="700" fill="#fff">Concept to live.</text>
+          </svg>
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">Campaigns, Concept to Live</div>
+          <div class="cat-stars">★★★★★ <span>(30+ campaigns)</span></div>
+          <div class="cat-usp">From the first idea through strategy, scripts, and every marketing surface — owned until it was live and performing.</div>
+          <div class="cat-proof"><strong>Proof:</strong> 30+ campaigns at DaMENSCH. Concept, brief, content, performance ads, CRM, social. All the same person, all the same calendar.</div>
+          <div class="cat-cta">
+            <span class="cat-price">Bestseller</span>
+            <span class="cat-link">See the work →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 2. CELEBRITY CAMPAIGNS -->
+      <a href="https://sharangportfolio.wordpress.com/" target="_blank" class="cat-card">
+        <div class="cat-visual">
+          <div class="cat-tag dark">Featured · written & marketed</div>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="300" fill="#0a0a0a"/>
+            <rect y="0" width="400" height="40" fill="#000"/>
+            <rect y="260" width="400" height="40" fill="#000"/>
+            <g transform="translate(200, 150)">
+              <rect x="-90" y="-50" width="180" height="100" rx="6" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/>
+              <polygon points="-15,-25 25,0 -15,25" fill="#FF9900"/>
+              <rect x="-70" y="-65" width="40" height="20" fill="#8B0000" rx="2"/>
+              <rect x="-25" y="-65" width="40" height="20" fill="#0a0a0a" stroke="#333" rx="2"/>
+              <rect x="20" y="-65" width="40" height="20" fill="#8B0000" rx="2"/>
+              <line x1="-90" y1="-50" x2="90" y2="-50" stroke="#fff" stroke-width="1" opacity="0.3"/>
+            </g>
+            <text x="200" y="245" text-anchor="middle" font-family="Playfair Display" font-style="italic" font-size="18" fill="#fff">Scripts written. Campaigns owned.</text>
+          </svg>
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">Celebrity Campaigns — Written & Marketed</div>
+          <div class="cat-stars">★★★★★ <span>(multiple campaigns)</span></div>
+          <div class="cat-usp">Scripts written, briefs locked, marketing built from scratch — owned every word and every channel from concept through to the campaign going live.</div>
+          <div class="cat-proof"><strong>Proof:</strong> Wrote scripts and led the full marketing execution for celebrity-led campaigns at DaMENSCH. The craft was the writing and the strategy, not the shoot.</div>
+          <div class="cat-cta">
+            <span class="cat-price">Premium</span>
+            <span class="cat-link">See the work →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 3. IP PARTNERSHIPS -->
+      <a href="https://sharangportfolio.wordpress.com/" target="_blank" class="cat-card">
+        <div class="cat-visual">
+          <div class="cat-tag">5+ partnerships · strategy + execution</div>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="300" fill="#f5e6d3"/>
+            <g transform="translate(200, 150)">
+              <polygon points="0,-90 26,-28 92,-28 38,12 58,76 0,38 -58,76 -38,12 -92,-28 -26,-28" fill="none" stroke="#8B0000" stroke-width="2" opacity="0.15"/>
+              <polygon points="0,-50 14,-16 52,-16 22,7 33,42 0,22 -33,42 -22,7 -52,-16 -14,-16" fill="#8B0000"/>
+              <text text-anchor="middle" y="6" font-family="Playfair Display" font-style="italic" font-size="14" font-weight="700" fill="#fff">SK</text>
+            </g>
+            <g transform="translate(80,80)"><rect x="-25" y="-15" width="50" height="30" rx="4" fill="#fff" stroke="#8B0000" stroke-width="1.5"/><text text-anchor="middle" y="4" font-family="Inter" font-size="9" font-weight="700" fill="#8B0000">BRAND</text></g>
+            <g transform="translate(320,80)"><circle r="22" fill="#fff" stroke="#8B0000" stroke-width="1.5"/><text text-anchor="middle" y="4" font-family="Inter" font-size="9" font-weight="700" fill="#8B0000">IP</text></g>
+            <g transform="translate(80,220)"><polygon points="0,-22 22,12 -22,12" fill="#fff" stroke="#8B0000" stroke-width="1.5"/><text text-anchor="middle" y="6" font-family="Inter" font-size="9" font-weight="700" fill="#8B0000">FIT</text></g>
+            <g transform="translate(320,220)"><rect x="-22" y="-22" width="44" height="44" fill="#fff" stroke="#8B0000" stroke-width="1.5" transform="rotate(45)"/><text text-anchor="middle" y="4" font-family="Inter" font-size="9" font-weight="700" fill="#8B0000">ROI</text></g>
+            <g stroke="#8B0000" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4" fill="none">
+              <line x1="105" y1="80" x2="180" y2="120"/>
+              <line x1="295" y1="80" x2="220" y2="120"/>
+              <line x1="105" y1="220" x2="180" y2="180"/>
+              <line x1="295" y1="220" x2="220" y2="180"/>
+            </g>
+          </svg>
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">IP Partnerships</div>
+          <div class="cat-stars">★★★★★ <span>(5+ partnerships owned)</span></div>
+          <div class="cat-usp">Picked the right IPs, built the narrative around them, and took the whole thing to the audience. Not just a signing — a full campaign around the fit.</div>
+          <div class="cat-proof"><strong>Proof:</strong> 5+ IP partnerships at DaMENSCH, each owned from selection and structuring through content, marketing, and live activation.</div>
+          <div class="cat-cta">
+            <span class="cat-price">Strategic</span>
+            <span class="cat-link">See the work →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 4. AI AUTOMATION -->
+      <a href="https://sharangportfolio.wordpress.com/" target="_blank" class="cat-card">
+        <div class="cat-visual">
+          <div class="cat-tag dark">In production · saving hours</div>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="ai-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0a0e27"/>
+                <stop offset="100%" stop-color="#1a1a3e"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#ai-bg)"/>
+            <g stroke="rgba(255,153,0,0.25)" stroke-width="1" fill="none">
+              <line x1="80" y1="80" x2="200" y2="150"/>
+              <line x1="80" y1="150" x2="200" y2="150"/>
+              <line x1="80" y1="220" x2="200" y2="150"/>
+              <line x1="200" y1="150" x2="320" y2="80"/>
+              <line x1="200" y1="150" x2="320" y2="150"/>
+              <line x1="200" y1="150" x2="320" y2="220"/>
+            </g>
+            <circle cx="80" cy="80" r="8" fill="#FF9900"/>
+            <circle cx="80" cy="150" r="8" fill="#FF9900"/>
+            <circle cx="80" cy="220" r="8" fill="#FF9900"/>
+            <circle cx="200" cy="150" r="14" fill="#fff"/>
+            <circle cx="200" cy="150" r="10" fill="#FF9900"/>
+            <circle cx="320" cy="80" r="8" fill="#8B0000"/>
+            <circle cx="320" cy="150" r="8" fill="#8B0000"/>
+            <circle cx="320" cy="220" r="8" fill="#8B0000"/>
+            <text x="40" y="80" font-family="Inter" font-size="9" fill="rgba(255,255,255,0.6)">Brief</text>
+            <text x="40" y="150" font-family="Inter" font-size="9" fill="rgba(255,255,255,0.6)">Brand</text>
+            <text x="40" y="220" font-family="Inter" font-size="9" fill="rgba(255,255,255,0.6)">Data</text>
+            <text x="200" y="125" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#FF9900" letter-spacing="2">AI</text>
+            <text x="345" y="83" font-family="Inter" font-size="9" fill="rgba(255,255,255,0.6)">Copy</text>
+            <text x="345" y="153" font-family="Inter" font-size="9" fill="rgba(255,255,255,0.6)">Visual</text>
+            <text x="345" y="223" font-family="Inter" font-size="9" fill="rgba(255,255,255,0.6)">Variant</text>
+            <text x="200" y="270" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#fff" letter-spacing="3">50%+ TIME SAVED</text>
+          </svg>
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">AI Content Automation</div>
+          <div class="cat-stars">★★★★★ <span>(rare in market)</span></div>
+          <div class="cat-usp">A working pipeline — not a deck. Briefs in, on-brand creative out. Built around ChatGPT, Claude, Midjourney.</div>
+          <div class="cat-proof"><strong>Proof:</strong> Live workflow at DaMENSCH cutting performance creative production by 50%+. Portable across categories.</div>
+          <div class="cat-cta">
+            <span class="cat-price">Differentiator</span>
+            <span class="cat-link">See the work →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 5. BRAND FILMS -->
+      <a href="https://sharangportfolio.wordpress.com/" target="_blank" class="cat-card">
+        <div class="cat-visual">
+          <div class="cat-tag dark">Written & marketed</div>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="300" fill="#0a0a0a"/>
+            <rect y="0" width="400" height="30" fill="#000"/>
+            <rect y="270" width="400" height="30" fill="#000"/>
+            <g transform="translate(200, 150)">
+              <rect x="-100" y="-55" width="200" height="110" rx="6" fill="#111" stroke="#222" stroke-width="1"/>
+              <rect x="-80" y="-35" width="160" height="70" rx="3" fill="#1a1a1a"/>
+              <line x1="-20" y1="-35" x2="-20" y2="35" stroke="#333" stroke-width="1"/>
+              <line x1="20" y1="-35" x2="20" y2="35" stroke="#333" stroke-width="1"/>
+              <line x1="-80" y1="0" x2="80" y2="0" stroke="#333" stroke-width="1"/>
+              <circle cx="0" cy="0" r="20" fill="none" stroke="#FF9900" stroke-width="1.5"/>
+              <polygon points="-8,-10 14,0 -8,10" fill="#FF9900"/>
+            </g>
+            <text x="200" y="40" text-anchor="middle" font-family="Inter" font-size="9" letter-spacing="3" fill="rgba(255,255,255,0.4)">SCRIPT · BRIEF · CAMPAIGN</text>
+          </svg>
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">Brand & Ad Film Writing</div>
+          <div class="cat-stars">★★★★★ <span>(concept through campaign)</span></div>
+          <div class="cat-usp">Scripts that don't read like scripts, and a marketing plan that doesn't leave the film stranded after the shoot.</div>
+          <div class="cat-proof"><strong>Proof:</strong> Wrote scripts and owned the full marketing campaign for brand and ad films at DaMENSCH, performance-ready from day one.</div>
+          <div class="cat-cta">
+            <span class="cat-price">Creative</span>
+            <span class="cat-link">See the work →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 6. END-TO-END CONTENT -->
+      <a href="https://sharangportfolio.wordpress.com/" target="_blank" class="cat-card">
+        <div class="cat-visual">
+          <div class="cat-tag dark">Full-stack</div>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="300" fill="#0F1111"/>
+            <g transform="translate(200, 150)">
+              <circle r="100" fill="none" stroke="rgba(255,153,0,0.1)" stroke-width="1"/>
+              <circle r="70" fill="none" stroke="rgba(255,153,0,0.15)" stroke-width="1"/>
+              <circle r="40" fill="none" stroke="rgba(255,153,0,0.2)" stroke-width="1"/>
+              <circle r="14" fill="#FF9900"/>
+              <text text-anchor="middle" y="4" font-family="Inter" font-size="10" font-weight="700" fill="#0F1111">SK</text>
+              <g transform="translate(0,-90)"><rect x="-25" y="-12" width="50" height="24" rx="3" fill="#1a1a1a" stroke="#FF9900" stroke-width="1"/><text text-anchor="middle" y="4" font-family="Inter" font-size="9" font-weight="600" fill="#FF9900">BRAND</text></g>
+              <g transform="translate(78,-45)"><rect x="-22" y="-12" width="44" height="24" rx="3" fill="#1a1a1a" stroke="#FF9900" stroke-width="1"/><text text-anchor="middle" y="4" font-family="Inter" font-size="9" font-weight="600" fill="#FF9900">SOCIAL</text></g>
+              <g transform="translate(78,45)"><rect x="-22" y="-12" width="44" height="24" rx="3" fill="#1a1a1a" stroke="#FF9900" stroke-width="1"/><text text-anchor="middle" y="4" font-family="Inter" font-size="9" font-weight="600" fill="#FF9900">PERF</text></g>
+              <g transform="translate(0,90)"><rect x="-22" y="-12" width="44" height="24" rx="3" fill="#1a1a1a" stroke="#FF9900" stroke-width="1"/><text text-anchor="middle" y="4" font-family="Inter" font-size="9" font-weight="600" fill="#FF9900">CRM</text></g>
+              <g transform="translate(-78,45)"><rect x="-22" y="-12" width="44" height="24" rx="3" fill="#1a1a1a" stroke="#FF9900" stroke-width="1"/><text text-anchor="middle" y="4" font-family="Inter" font-size="9" font-weight="600" fill="#FF9900">FILMS</text></g>
+              <g transform="translate(-78,-45)"><rect x="-22" y="-12" width="44" height="24" rx="3" fill="#1a1a1a" stroke="#FF9900" stroke-width="1"/><text text-anchor="middle" y="4" font-family="Inter" font-size="9" font-weight="600" fill="#FF9900">CTLG</text></g>
+            </g>
+            <text x="200" y="40" text-anchor="middle" font-family="Inter" font-size="10" letter-spacing="3" fill="rgba(255,153,0,0.6)">ONE OWNER · SIX SURFACES</text>
+          </svg>
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">End-to-End Content</div>
+          <div class="cat-stars">★★★★★ <span>(no handoff gaps)</span></div>
+          <div class="cat-usp">Brand to performance to CRM to catalogue — all on one calendar, all from one brief, with no orphan channels.</div>
+          <div class="cat-proof"><strong>Proof:</strong> Owns six content surfaces across DaMENSCH today. Cross-functional with Design, Buying, Sales, Performance.</div>
+          <div class="cat-cta">
+            <span class="cat-price">Full coverage</span>
+            <span class="cat-link">See the work →</span>
+          </div>
+        </div>
+      </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EMPLOYMENT -->
+  <div class="section">
+    <div class="section-h">Where it was made</div>
+    <div class="section-sub">5 employers · 8+ years · across fashion, EdTech, food-tech, e-commerce, and agency.</div>
+    <div class="employment">
+      <div class="emp-card current">
+        <div><div class="emp-brand">DaMENSCH</div><div class="emp-role">Sr. Manager, Content & Creative</div><div class="emp-year">2023 → Now</div></div>
+        <div class="emp-usp">Built the AI workflow. Took 30+ campaigns from idea to live.</div>
+      </div>
+      <div class="emp-card">
+        <div><div class="emp-brand">Scaler</div><div class="emp-role">Content Strategist</div><div class="emp-year">2021 — 2024</div></div>
+        <div class="emp-usp">Owned content for India's top tech-ed brand.</div>
+      </div>
+      <div class="emp-card">
+        <div><div class="emp-brand">Licious</div><div class="emp-role">Sr. Copywriter</div><div class="emp-year">2020</div></div>
+        <div class="emp-usp">Brand voice + Meta/Google performance.</div>
+      </div>
+      <div class="emp-card">
+        <div><div class="emp-brand">Swiggy</div><div class="emp-role">Content Writer</div><div class="emp-year">2018 — 2020</div></div>
+        <div class="emp-usp">Managed writers for Swiggy POP at scale.</div>
+      </div>
+      <div class="emp-card">
+        <div><div class="emp-brand">Origami</div><div class="emp-role">Jr. Copywriter</div><div class="emp-year">2016 — 2018</div></div>
+        <div class="emp-usp">Cut teeth on Dubai brand work, agency-side.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPECS -->
+  <div class="section">
+    <div class="section-h">Product details</div>
+    <div class="specs-grid">
+      <table class="specs-table">
+        <tr><td>Brand</td><td>Sharang Karkal</td></tr>
+        <tr><td>Model name</td><td>Senior Manager, Content & Creative</td></tr>
+        <tr><td>Country of origin</td><td>India</td></tr>
+        <tr><td>Dispatch from</td><td>Bengaluru</td></tr>
+        <tr><td>Operating temperature</td><td>Pre-launch chaos to brand-campaign sets</td></tr>
+        <tr><td>Power source</td><td>Cold brew & tight briefs</td></tr>
+        <tr><td>Best Sellers Rank</td><td>#3 in Senior Content (Bengaluru)</td></tr>
+      </table>
+      <table class="specs-table">
+        <tr><td>Tools compatible</td><td>Meta Ads Manager, Google Ads, ChatGPT, Claude, Midjourney, Photoshop, Hootsuite</td></tr>
+        <tr><td>Skill stack</td><td>Brand campaigns, IP partnerships, AI-led creative, performance copy, narrative & storytelling, creative direction, launch ops</td></tr>
+        <tr><td>Languages supported</td><td>English, Hindi, Kannada, Konkani</td></tr>
+        <tr><td>Education</td><td>Bachelor of Media Studies, Jain University; Digital Marketing & Analytics, ISB</td></tr>
+        <tr><td>Notice period</td><td>60 days</td></tr>
+        <tr><td>Warranty</td><td>90-day mutual review window</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="section">
+    <div class="section-h">Customer reviews</div>
+
+    <div class="reviews-summary">
+      <div>
+        <div class="big-rating">4.8 ★★★★★</div>
+        <div style="font-size:12px; color:#565959; margin-top:4px;">1,847 ratings across 5 employers</div>
+        <div style="font-size:12px; color:#007185; margin-top:8px; cursor:pointer;">Write a recommendation →</div>
+      </div>
+      <div>
+        <div class="rating-bar-row"><span class="rating-bar-label">Output</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:96%;"></div></div><span class="rating-bar-pct">96%</span></div>
+        <div class="rating-bar-row"><span class="rating-bar-label">Speed</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:94%;"></div></div><span class="rating-bar-pct">94%</span></div>
+        <div class="rating-bar-row"><span class="rating-bar-label">Craft</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:97%;"></div></div><span class="rating-bar-pct">97%</span></div>
+        <div class="rating-bar-row"><span class="rating-bar-label">Strategy</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:95%;"></div></div><span class="rating-bar-pct">95%</span></div>
+        <div class="rating-bar-row"><span class="rating-bar-label">Calm</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:89%;"></div></div><span class="rating-bar-pct">89%</span></div>
+      </div>
+    </div>
+
+    <div class="review">
+      <div class="reviewer"><div class="avatar">RM</div><span class="reviewer-name">Recruiting Manager</span></div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-title">Has the AI workflow in production. Rare.</div>
+      <div class="review-meta">Reviewed in India · <span class="verified">Verified Purchase</span></div>
+      <div class="review-body">We've spoken to 40 senior content folks this year. Maybe two had actually shipped the AI workflows they were talking about. This one had it live, was already iterating on it, and could explain exactly which prompts ran at which step. Refreshing.</div>
+      <div class="review-helpful">12 people found this helpful · Helpful · Report</div>
+    </div>
+
+    <div class="review">
+      <div class="reviewer"><div class="avatar" style="background:#8B0000;">NK</div><span class="reviewer-name">Navaneethakrishnan, Senior Designer</span></div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-title">Briefs are clear. Reviews are sharp. Vibes are good.</div>
+      <div class="review-meta">Reviewed in India · <span class="verified">Verified Purchase</span></div>
+      <div class="review-body">Writes briefs that don't need three follow-ups, gives feedback in the actual edit window, and somehow still finds time to make jokes in the standup. Has opinions about typography. Not annoying about them.</div>
+      <div class="review-helpful">8 people found this helpful · Helpful · Report</div>
+    </div>
+
+    <div class="review">
+      <div class="reviewer"><div class="avatar" style="background:#0F6E56;">RV</div><span class="reviewer-name">Rahul Verma, Performance Marketing Lead</span></div>
+      <div class="review-stars">★★★★☆</div>
+      <div class="review-title">Knows what a CTR is. Shouldn't be remarkable but it is.</div>
+      <div class="review-meta">Reviewed in India · <span class="verified">Verified Purchase</span></div>
+      <div class="review-body">Most content people throw work over the wall and disappear. Sharang sat with our ROAS dashboard, asked which hooks were dying, and rebuilt the next batch off real data. Lost half a star because he won't shut up about good copy on bad media buys.</div>
+      <div class="review-helpful">4 people found this helpful · Helpful · Report</div>
+    </div>
+  </div>
+
+  <!-- Q&A -->
+  <div class="section">
+    <div class="section-h">Customer questions & answers</div>
+
+    <div class="qa">
+      <div class="qa-q"><div class="qa-badge">Q</div><div>Will the AI workflow only work at apparel brands, or is it portable?</div></div>
+      <div class="qa-a"><div class="qa-badge">A</div><div>Portable. The structure is brief → asset → variant testing, with AI accelerating the asset and variant steps. Works for any brand with a creative-heavy funnel — apparel, food, fintech, EdTech, anything with paid distribution.</div></div>
+      <div class="qa-meta">Answered by <a href="#" style="color:#007185;">Sharang K.</a> · 47 people found this helpful</div>
+    </div>
+
+    <div class="qa">
+      <div class="qa-q"><div class="qa-badge">Q</div><div>How do you decide which IP partnerships are worth the spend?</div></div>
+      <div class="qa-a"><div class="qa-badge">A</div><div>Audience overlap first, fit second, reach third. Most brands flip those. The cheapest sponsorship is the one your customer actually cares about; the most expensive is the one that looks good in a press release.</div></div>
+      <div class="qa-meta">Answered by <a href="#" style="color:#007185;">Sharang K.</a> · 31 people found this helpful</div>
+    </div>
+
+    <div class="qa">
+      <div class="qa-q"><div class="qa-badge">Q</div><div>Comfortable owning a campaign end-to-end without a big team?</div></div>
+      <div class="qa-a"><div class="qa-badge">A</div><div>Yes. Most campaigns at DaMENSCH ran with a tight crew working from a single brief. The trick isn't more people — it's a clear brief and a calendar that everyone reads the same way.</div></div>
+      <div class="qa-meta">Answered by <a href="#" style="color:#007185;">Sharang K.</a> · 22 people found this helpful</div>
+    </div>
+
+    <div class="qa">
+      <div class="qa-q"><div class="qa-badge">Q</div><div>What is this hire NOT?</div></div>
+      <div class="qa-a"><div class="qa-badge">A</div><div>Not a pure performance marketer (will partner with one, won't replace one). Not an SEO specialist. Not someone who'll redo your social calendar in Canva for free during the interview.</div></div>
+      <div class="qa-meta">Answered by <a href="#" style="color:#007185;">Sharang K.</a> · 18 people found this helpful</div>
+    </div>
+
+    <div style="margin-top:12px;">
+      <a href="mailto:sharangkarkal@gmail.com?subject=Question%20about%20your%20listing" style="color:#007185; text-decoration:none; font-size:13px;">See more answered questions →</a>
+    </div>
+  </div>
+
+  <!-- WARRANTY -->
+  <div class="section">
+    <div class="section-h">Warranty & support</div>
+    <div style="font-size:13px; line-height:1.7; color:#0F1111;">
+      <strong>What's in the box:</strong> 1 Senior Manager Content & Creative, 8+ years of practice, an AI workflow that actually works, 30+ campaigns taken from concept to live, 5+ IP partnerships, and one strong opinion per meeting.<br/><br/>
+      <strong>What's not in the box:</strong> Buzzwords, decks of "what we could do," AI mention without proof, ego, or six-month onboarding.<br/><br/>
+      <strong>Support:</strong> One coffee chat (free, 30 minutes). One sample brief or critique (free, async). After that, please <a href="mailto:sharangkarkal@gmail.com" style="color:#007185;">talk to the seller</a>.
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-back" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Back to top</div>
+<div class="footer">
+  <p>This listing is a creative concept by Sharang Karkal. No actual marketplace was harmed in the making of this resume.</p>
+  <p style="margin-top:8px;">© 2026 Karkal.in · <a href="mailto:sharangkarkal@gmail.com">Contact seller</a> · <a href="https://sharangportfolio.wordpress.com" target="_blank">Visit portfolio</a></p>
+</div>
+
+<script>
+  const scroller = document.getElementById('catScroller');
+  const leftArrow = document.getElementById('catLeft');
+  const rightArrow = document.getElementById('catRight');
+
+  function slideCat(dir) {
+    scroller.scrollBy({ left: 336 * 2 * dir, behavior: 'smooth' });
+  }
+
+  function updateArrows() {
+    leftArrow.classList.toggle('disabled', scroller.scrollLeft <= 5);
+    rightArrow.classList.toggle('disabled', scroller.scrollLeft + scroller.clientWidth >= scroller.scrollWidth - 5);
+  }
+
+  scroller.addEventListener('scroll', updateArrows);
+  window.addEventListener('resize', updateArrows);
+  setTimeout(updateArrows, 100);
+</script>
+
+</body>
+</html>
